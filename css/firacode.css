@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'Fira Code';
+    src: local('Fira Code SemiBold'), local('FiraCode-SemiBold'),
+        url('../fonts/FiraCode-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    src: local('Fira Code Light'), local('FiraCode-Light'),
+        url('../fonts/FiraCode-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    src: local('Fira Code Bold'), local('FiraCode-Bold'),
+        url('../fonts/FiraCode-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    src: local('Fira Code Medium'), local('FiraCode-Medium'),
+        url('../fonts/FiraCode-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    src: local('Fira Code Regular'), local('FiraCode-Regular'),
+        url('../fonts/FiraCode-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

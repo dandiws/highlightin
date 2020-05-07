@@ -1,0 +1,62 @@
+@import url(firacode.css);
+
+*{
+    font-family: 'Fira code', monospace;
+}
+
+.main-wrapper{
+    padding-top: 3rem;
+}
+.page-header{
+    margin-bottom: 1.6rem !important;
+}
+.page-title{
+    margin-bottom: 10px;
+    line-height: 1;
+}
+#code-input, #code-box, #code-box span{
+    font-family: 'Fira code', monospace;
+}
+#code-input{
+    margin-bottom: 1rem;
+    width: 100%;
+    background-color: #f5f5f5;
+    border-radius: 2px;
+    border: 1px solid #eeeeee;
+    padding: 1rem;
+    resize: none;
+    font-size: 12px;
+}
+#code-input:focus{
+    outline: none;
+    border-color: #b3d9ff;
+}
+
+.EnlighterJSSelectAllButton{
+    text-align: center;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+select, button, input {
+    padding: 5px 10px;
+    border:1px solid rgba(27,31,35,.2);
+    color: #24292e;
+    border-radius: 2px;
+}
+
+button{
+    background-color: #eff3f6;
+    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+    cursor: pointer;
+    font-weight: 550;
+}
+button:hover{
+    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
+    border-color: rgba(27,31,35,.35);
+}
+.footer{
+    text-align: center;
+    font-size: 12px;
+    padding: 1rem 0;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Highliter</title>
+    <link rel="stylesheet" href="css/simple-grid.min.css" />
+    <link rel="stylesheet" href="css/Enlighterjs.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="js/MooTools.min.js"></script>
+    <script src="js/Enlighterjs.min.js"></script>
+  </head>
+  <body>
+    <div class="container main-wrapper">
+      <div class="row">
+          <div class="col-12 page-header">
+              <h1 class="page-title">Highlightin</h1>
+              <small>Copy and paste your highlighted code in Word Document</small>
+          </div>
+        <div class="col-12">
+          <textarea class="code-input" id="code-input" rows="10" placeholder="Enter your code here..."></textarea>
+          <select id="code-type"> </select>
+          <button id="highlight-btn">highlight</button>
+          <button id="highlight-btn-select">highlight and select</button>
+        </div>
+        <div class="col-12">
+          <div id="code-box"></div>
+        </div>
+        <div class="col-12">
+            <div class="footer">
+                &copy; copyright 2020 &bullet; Dandi Wiratsangka S
+            </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard-polyfill/2.8.6/clipboard-polyfill.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
