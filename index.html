@@ -14,14 +14,34 @@
     <div class="container main-wrapper">
       <div class="row">
           <div class="col-12 page-header">
-              <h1 class="page-title">Highlightin</h1>
-              <small>Copy and paste your highlighted code in Word Document</small>
+              <div>
+                <h1 class="page-title">Highlightin</h1>
+                <small>Copy and paste your highlighted code in Word Document</small>
+              </div>
+              <div class="links">
+                <a target="_blank" href="https://github.com/dandiws/highlightin"><span class="github-logo"></span> Github</a>
+              </div>
           </div>
         <div class="col-12">
           <textarea class="code-input" id="code-input" rows="10" placeholder="Enter your code here..."></textarea>
-          <select id="code-type"> </select>
-          <button id="highlight-btn">highlight</button>
-          <button id="highlight-btn-select">highlight and select</button>
+        </div>
+        <div class="col-12">
+          <div class="actions">
+            <div class="action">
+              <div class="action-label">Language</div>
+              <select id="code-type"></select>
+            </div>
+            <div class="action">
+              <div class="action-label">Theme</div>
+              <select id="theme-select"></select>
+            </div>
+            <div class="action">
+              <button id="highlight-btn">highlight</button>
+            </div>
+            <div class="action">
+              <button id="highlight-btn-select">highlight and select</button>
+            </div>
+          </div>
         </div>
         <div class="col-12">
           <div id="code-box"></div>
@@ -30,6 +50,11 @@
             <div class="footer">
                 &copy; copyright 2020 &bullet; Dandi Wiratsangka S
             </div>
+        </div>
+      </div>
+      <div class="copy-popup hide" id="copy-popup">
+        <div class="popup-inner">
+          ⌘ + C to copy
         </div>
       </div>
     </div>

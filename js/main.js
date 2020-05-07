@@ -43,6 +43,25 @@ const languages = {
   yaml: 'YAML',
 }
 
+const themes = {
+  enlighter: "Enlighter",
+  atomic: "Atomic",
+  beyond: "Beyond",
+  classic: "Classic",
+  droide: "Droide",
+  eclipse: "Eclipse",
+  git: "Git",
+  godzilla: "Godzilla",
+  minimal: "Minimal",
+  mocha: "Mocha",
+  mootools: "MooTools",
+  mootwo: "MooTwo",
+  panic: "Panic",
+  rowhammer: "Rowhammer",
+  tutti: "Tutti",
+  twilight: "Twilight",
+}
+
 const codeType = document.getElementById('code-type')
 for (const key in languages) {
     const option = document.createElement('option')
@@ -51,11 +70,36 @@ for (const key in languages) {
     codeType.appendChild(option)
 }
 
+const themeSelect = document.getElementById('theme-select')
+for (const key in themes) {
+  const option = document.createElement('option')
+  option.value = key
+  option.innerHTML = themes[key]
+  themeSelect.appendChild(option)
+}
+
 function convertToNonBreakingSpace(text){
   return text.replace(/ /g,'&nbsp;')
 }
 
-const highlight = ({ autoSelect }) => {
+function getSelectedLanguage(){
+  return codeType.options[codeType.selectedIndex].value
+}
+
+function getSelectedTheme(){
+  return themeSelect.options[themeSelect.selectedIndex].value
+}
+
+function selectCode(el){
+  window.getSelection().selectAllChildren(el)
+  const popup = document.getElementById('copy-popup')
+  popup.className = 'copy-popup'
+  setTimeout(()=>{
+    popup.className = 'copy-popup hide'
+  },1000)
+}
+
+const highlight = (options) => {
   const codeBox = document.getElementById('code-box')
   const codeBlock = document.createElement('pre')
   codeBlock.innerHTML = document.getElementById('code-input').value
@@ -63,7 +107,8 @@ const highlight = ({ autoSelect }) => {
   codeBox.appendChild(codeBlock)
 
   var myEnlighter = new EnlighterJS(codeBlock, {
-    language: codeType.options[codeType.selectedIndex].value,
+    language: getSelectedLanguage(),
+    theme: getSelectedTheme(),
     // showLinenumbers: false,
     infoButton: false,
     windowButton: false,
@@ -86,17 +131,19 @@ const highlight = ({ autoSelect }) => {
     events: {
       click: (e)=>{
         e.preventDefault()
-        window.getSelection().selectAllChildren(output);
+        selectCode(output)
       }
     }
   })
   var toolbar = output.getParent().getChildren('.EnlighterJSToolbar')
   toolbar.grab(selectAllBtn)
 
-  if(autoSelect){
-    window.getSelection().selectAllChildren(output);
+  if(options && options.autoSelect){
+    selectCode(output)
   }
 }
+
+
 
 
 document.getElementById('highlight-btn').onclick = () => {
@@ -104,4 +151,12 @@ document.getElementById('highlight-btn').onclick = () => {
 }
 document.getElementById('highlight-btn-select').onclick = () => {
   highlight({autoSelect:true})
+}
+
+themeSelect.onchange = () => {
+  highlight()
+}
+
+codeType.onchange = () => {
+  highlight()
 }
